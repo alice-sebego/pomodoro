@@ -14,10 +14,15 @@ function component() {
     const myIcon = new Image();
     myIcon.src = Icon;
 
-  element.appendChild(myIcon);
+    element.appendChild(myIcon);
 
- 
     return element;
 }
  
   document.body.appendChild(component());
+
+  const hello = () => {
+    console.log("Hello World !!!");
+  }
+
+  hello();

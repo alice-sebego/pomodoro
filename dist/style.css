@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
+@import url(https://fonts.googleapis.com/css2?family=Raleway&display=swap);
 *, ::before, ::after{
     box-sizing: border-box;
     margin: 0;
@@ -12,5 +11,5 @@ body{
 
 .hello {
     color: red;
-    background: url('./icon.png');
+    background: url(31d6cfe0d16ae931b73c.png);
 }

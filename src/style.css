@@ -8,7 +8,7 @@
 
 body{
     font-family: 'Raleway', sans-serif;
-    background: rgb(156,114,137);
+    background: rgb(156,114,137) cover no-repeat;
     background: radial-gradient(circle, rgba(156,114,137,0.9948354341736695) 10%, rgba(65,13,40,1) 43%);
 }
 
@@ -18,12 +18,13 @@ header{
 }
 
 h1{
-    font-size: 8vw;
+    font-size: 7vw;
     color: white;
 }
 
 h2{
     font-size: 5vw;
+    color: rgb(148, 3, 117);
 }
 
 .count{

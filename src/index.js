@@ -24,7 +24,7 @@ function component() {
     return element;
 }
  
-  document.body.appendChild(component());
+  //document.body.appendChild(component());
 
   const hello = () => {
     console.log("Hello World !!!");

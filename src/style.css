@@ -12,11 +12,6 @@ body{
     background: radial-gradient(circle, rgba(156,114,137,0.9948354341736695) 10%, rgba(65,13,40,1) 43%);
 }
 
-.hello {
-    color: red;
-    background: url('./icon.png');
-}
-
 header{
     padding: 4vh 3vw;
     text-align: center;
@@ -51,7 +46,7 @@ h2{
 }
 
 main{
-    width: 65%;
+    width: 60%;
     margin: auto;
 }
 
@@ -63,9 +58,10 @@ main{
 }
 
 input[type="button"]{
-    padding: 0.9em;
+    padding: 0.5em;
     background-color:rgb(148, 3, 117);
     color: white;
+    font-size: 1.5em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border: none;
@@ -79,4 +75,35 @@ input[type="button"]{
 #displayCycle{
     color: white;
     font-size: 1.5em;
+}
+
+@media (max-width:700px){
+    main{
+        width: 65%;
+    }
+
+    input[type="button"]{
+        padding: 0.5em;
+        font-size: 1em;
+    }
+}
+
+@media (max-width:495px){
+    main{
+        width: 80%;
+    }
+
+    .count{
+        padding: 1.2em;
+    }
+
+    #counts, #buttons{
+        justify-content: space-evenly;
+    }
+
+    input[type="button"]{
+        padding: 0.7em;
+        font-size: 0.8em;
+    }
+
 }

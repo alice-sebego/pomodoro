@@ -9,7 +9,6 @@ function component() {
    // Lodash, currently included via a script, is required for this line to work
    // Lodash, now imported by this script
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
 
     // Add the image to our existing div.
     const myIcon = new Image();
@@ -26,8 +25,10 @@ function component() {
  
   //document.body.appendChild(component());
 
-  const hello = () => {
-    console.log("Hello World !!!");
-  }
-
-  hello();
+// Elements of DOM
+const $work = document.querySelector("#work");
+const $rest = document.querySelector("#rest");
+const $start = document.querySelector("#start");
+const $pause = document.querySelector("#pause");
+const $reset = document.querySelector("#reset");
+const $cycleNb = document.querySelector("#cycleNb"); 

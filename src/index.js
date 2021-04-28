@@ -3,26 +3,18 @@ import './style.css';
 import Icon from './icon.png';
 import printMe from './print.js';
 
-function component() {
-    const element = document.createElement('div');
-    const btn = document.createElement('button');
-   // Lodash, currently included via a script, is required for this line to work
-   // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+// Insert a favicon
+const component = () => {
 
-    // Add the image to our existing div.
-    const myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/png';
+    link.rel = 'icon';
+    link.href = Icon;
 
-    // Use print.js function when we click on btn
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
-    element.appendChild(btn);
-
-    return element;
+    return link;
 }
-//document.body.appendChild(component());
+
+document.querySelector('head').appendChild(component());
 
 // Elements of DOM
 const $work = document.querySelector("#work");

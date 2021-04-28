@@ -8,8 +8,12 @@
 
 body{
     font-family: 'Raleway', sans-serif;
-    background: rgb(156,114,137) cover no-repeat;
-    background: radial-gradient(circle, rgba(156,114,137,0.9948354341736695) 10%, rgba(65,13,40,1) 43%);
+    background: rgb(156,114,137); 
+    background: radial-gradient(circle, rgba(156,114,137,0.9948354341736695) 10%, rgba(65,13,40,1) 43%) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header{
@@ -23,14 +27,16 @@ h1{
 }
 
 h2{
-    font-size: 5vw;
+    font-size: 4vw;
     color: rgb(148, 3, 117);
 }
 
 .count{
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    -moz-backdrop-filter: blur(4px);
+    -o-backdrop-filter: blur(4px);
     padding: 2em;
     border-top: 1px solid white;
     border-right: 1px solid white;

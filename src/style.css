@@ -55,6 +55,7 @@ h2{
 main{
     width: 60%;
     margin: auto;
+    padding: 3vh 0 10vh 0;
 }
 
 #counts, #buttons{
@@ -82,6 +83,11 @@ input[type="button"]{
 #displayCycle{
     color: white;
     font-size: 1.5em;
+}
+
+footer{
+    color: white;
+    text-align: center;
 }
 
 @media (max-width:700px){

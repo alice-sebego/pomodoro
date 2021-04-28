@@ -1,20 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 import Icon from './icon.png';
-import printMe from './utils.js';
-
-// Insert a favicon
-const component = () => {
-
-    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/png';
-    link.rel = 'icon';
-    link.href = Icon;
-
-    return link;
-}
-
-document.querySelector('head').appendChild(component());
+import * as util from './utils.js';
 
 // Elements of DOM
 const $work = document.querySelector("#work");
@@ -22,8 +9,15 @@ const $rest = document.querySelector("#rest");
 const $start = document.querySelector("#start");
 const $pause = document.querySelector("#pause");
 const $reset = document.querySelector("#reset");
-const $cycleNb = document.querySelector("#cycleNb"); 
-// chrono
+const $cycleNb = document.querySelector("#cycleNb");
+const $year = document.querySelector("#year");
+
+
+// Add dynamics HTML Elements on the DOM
+util.displayYear($year);
+document.querySelector('head').appendChild(util.favicon(Icon));
+
+// Chrono
 let startminWork = 30;
 let timeWork = startminWork * 60;
 let startminRest = 5;

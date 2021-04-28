@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"printMe\": () => (/* binding */ printMe)\n/* harmony export */ });\nconst printMe = () => {\r\n    console.log('I get called from print.js!');\r\n}\r\n\r\n\n\n//# sourceURL=webpack://pomodoro/./src/utils.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"favicon\": () => (/* binding */ favicon),\n/* harmony export */   \"displayYear\": () => (/* binding */ displayYear)\n/* harmony export */ });\n/**\r\n * Insert a favicon on the DOM\r\n * @param {HTMLImageElement} icon \r\n * @returns HTMLHeadElement\r\n */\r\nconst favicon = (icon) => {\r\n    const link = document.querySelector(\"link[rel*='icon']\") || document.createElement('link');\r\n    link.type = 'image/png';\r\n    link.rel = 'icon';\r\n    link.href = icon;\r\n  \r\n    return link;\r\n}\r\n\r\n/**\r\n * Display year on the DOM\r\n * @param {HTMLElement} year \r\n */\r\n const displayYear = (year)=> {\r\n    let date = new Date(); \r\n    year.innerHTML = `${date.getFullYear()}`; \r\n}\r\n\r\n\n\n//# sourceURL=webpack://pomodoro/./src/utils.js?");
 
 /***/ })
 

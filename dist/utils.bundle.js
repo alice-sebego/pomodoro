@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/print.js":
+/***/ "./src/utils.js":
 /*!**********************!*\
-  !*** ./src/print.js ***!
+  !*** ./src/utils.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ printMe)\n/* harmony export */ });\nfunction printMe() {\r\n    console.log('I get called from print.js!');\r\n  }\n\n//# sourceURL=webpack://pomodoro/./src/print.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"printMe\": () => (/* binding */ printMe)\n/* harmony export */ });\nconst printMe = () => {\r\n    console.log('I get called from print.js!');\r\n}\r\n\r\n\n\n//# sourceURL=webpack://pomodoro/./src/utils.js?");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/print.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/utils.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

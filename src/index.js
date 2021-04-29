@@ -11,24 +11,30 @@ const $pause = document.querySelector("#pause");
 const $reset = document.querySelector("#reset");
 const $cycleNb = document.querySelector("#cycleNb");
 const $year = document.querySelector("#year");
+let cycle = 0;
 
 
 // Add dynamics HTML Elements on the DOM
 util.displayYear($year);
 document.querySelector('head').appendChild(util.favicon(Icon));
+$cycleNb.innerHTML = cycle;
 
 // Chrono
 let startminWork = 30;
-let timeWork = startminWork * 60;
+let timeWork = startminWork * 1;
 let startminRest = 5;
 let timeRest = startminRest * 60;
+
+let intervalWork;
+let intervalRest;
 
 // Countdown for Work
 const countdownWork = () => {
   
-  const min = Math.floor(timeWork / 60);
+  let min = Math.floor(timeWork / 60);
   let sec = timeWork % 60;
 
+  min = min < 10 ? '0' + min : min;
   sec = sec < 10 ? '0' + sec : sec;
 
   $work.innerHTML = `${min} : ${sec}`;
@@ -45,9 +51,10 @@ const countdownWork = () => {
 // Countdown for Rest
 const countdownRest = () => {
   
-  const min = Math.floor(timeRest / 60);
+  let min = Math.floor(timeRest / 60);
   let sec = timeRest % 60;
 
+  min = min < 10 ? '0' + min : min;
   sec = sec < 10 ? '0' + sec : sec;
 
   $rest.innerHTML = `${min} : ${sec}`;
@@ -55,14 +62,25 @@ const countdownRest = () => {
   if(timeRest > 0){
     timeRest --;
   } else {
+    cycle += 1;
     $rest.innerHTML = `05 : 00`;
-    setInterval(countdownWork, 1000);
+    //setInterval(countdownWork, 1000);
   }
 	
 }
 
 $start.addEventListener("click", () => {
-  setInterval(countdownWork, 1000);
-  $start.disabled = "true";
+  intervalWork = setInterval(countdownWork, 1000);
+  util.disableInput($start);
+
+  $pause.addEventListener("click", () => {
+    
+    util.undisableInput($start);
+    clearInterval(intervalWork);
+    clearInterval(intervalRest);
+    
+  });
+
 });
+
 

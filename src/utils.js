@@ -21,4 +21,22 @@ const favicon = (icon) => {
     year.innerHTML = `${date.getFullYear()}`; 
 }
 
-export {favicon, displayYear}
+/**
+ * Disable an input
+ * @param {HTMLInputElement} element 
+ */
+const disableInput = (element) => {
+    element.disabled = true;
+}
+
+/**
+ * Undisable an input
+ * @param {HTMLInputElement} element 
+ */
+const undisableInput = (element) => {
+    element.disabled = false;
+}
+  
+
+
+export {favicon, displayYear, disableInput, undisableInput}

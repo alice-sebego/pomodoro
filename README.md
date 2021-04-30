@@ -14,3 +14,5 @@ Idem with Webpack 5
 Install all devDependencies : `npm install`
 
 Compile files JS : `npm run build`
+
+Run this project on the local server : `npm run start`

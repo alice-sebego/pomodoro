@@ -22,64 +22,92 @@ $cycleNb.innerHTML = cycle;
 // Chrono
 let startminWork = 30;
 let timeWork = startminWork * 1;
+let minWork = Math.floor(timeWork / 60);
+let secWork = timeWork % 60;
 let startminRest = 5;
 let timeRest = startminRest * 60;
+let minRest = Math.floor(timeRest / 60);
+let secRest = timeRest % 60;
+let checkInterval = false;
+let pause = false;
 
-let intervalWork;
-let intervalRest;
-
-// Countdown for Work
-const countdownWork = () => {
-  
-  let min = Math.floor(timeWork / 60);
-  let sec = timeWork % 60;
-
-  min = min < 10 ? '0' + min : min;
-  sec = sec < 10 ? '0' + sec : sec;
-
-  $work.innerHTML = `${min} : ${sec}`;
-
-  if(timeWork > 0){
-    timeWork --;
-  } else {
-    $work.innerHTML = `30 : 00`;
-    setInterval(countdownRest, 1000);
-  }
-	
-}
-
-// Countdown for Rest
-const countdownRest = () => {
-  
-  let min = Math.floor(timeRest / 60);
-  let sec = timeRest % 60;
-
-  min = min < 10 ? '0' + min : min;
-  sec = sec < 10 ? '0' + sec : sec;
-
-  $rest.innerHTML = `${min} : ${sec}`;
-
-  if(timeRest > 0){
-    timeRest --;
-  } else {
-    cycle += 1;
-    $rest.innerHTML = `05 : 00`;
-    //setInterval(countdownWork, 1000);
-  }
-	
-}
 
 $start.addEventListener("click", () => {
-  intervalWork = setInterval(countdownWork, 1000);
+
   util.disableInput($start);
 
-  $pause.addEventListener("click", () => {
-    
-    util.undisableInput($start);
-    clearInterval(intervalWork);
-    clearInterval(intervalRest);
-    
-  });
+  if(checkInterval === false) {
+
+    checkInterval = true;
+
+    minWork = minWork < 10 ? '0' + minWork : minWork;
+    secWork = secWork < 10 ? '0' + secWork : secWork;
+    $work.innerHTML = `${minWork} : ${secWork}`;
+
+    timeWork --;
+
+    let timer = setInterval(() => {
+
+        if( pause === false && timeWork > 0){
+
+          minWork = Math.floor(timeWork / 60);
+          secWork = timeWork % 60;
+          minWork = minWork < 10 ? '0' + minWork : minWork;
+          secWork = secWork < 10 ? '0' + secWork : secWork;
+          $work.innerHTML = `${minWork} : ${secWork}`;
+
+          timeWork --;
+
+        } else if(pause === false && timeRest === 0 && timeWork === 0){
+          timeWork = startminWork * 1;
+          timeRest = startminRest * 60;
+          cycle ++ ;
+          $cycleNb.innerHTML = cycle;
+
+          minWork = Math.floor(timeWork / 60);
+          secWork = timeWork % 60;
+          minWork = minWork < 10 ? '0' + minWork : minWork;
+          secWork = secWork < 10 ? '0' + secWork : secWork;
+          $work.innerHTML = `${minWork} : ${secWork}`;
+
+          minRest = Math.floor(timeRest / 60);
+          secRest = timeRest % 60;
+          minRest = minRest < 10 ? '0' + minRest : minRest;
+          secRest = secRest < 10 ? '0' + secRest : secRest;
+          $rest.innerHTML = `${minRest} : ${secRest}`;
+        
+        }else if (pause === false && timeWork === 0){
+            timeRest --;
+            
+            minRest = Math.floor(timeRest / 60);
+            secRest = timeRest % 60;
+            minRest = minRest < 10 ? '0' + minRest : minRest;
+            secRest = secRest < 10 ? '0' + secRest : secRest;
+            $rest.innerHTML = `${minRest} : ${secRest}`;
+
+        } 
+      }, 1000);
+
+      $reset.addEventListener("click", () =>{
+        
+        util.undisableInput($start);
+        clearInterval(timer);
+        checkInterval = false;
+        timeWork = startminWork * 1;
+        timeRest = startminRest * 60;
+        minWork = Math.floor(timeWork / 60);
+        secWork = timeWork % 60;
+        minWork = minWork < 10 ? '0' + minWork : minWork;
+        secWork = secWork < 10 ? '0' + secWork : secWork;
+        $work.innerHTML = `${minWork} : ${secWork}`;
+        minRest = Math.floor(timeRest / 60);
+        secRest = timeRest % 60;
+        minRest = minRest < 10 ? '0' + minRest : minRest;
+        secRest = secRest < 10 ? '0' + secRest : secRest;
+        $rest.innerHTML = `${minRest} : ${secRest}`;
+
+      });
+  }
 
 });
 

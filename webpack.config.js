@@ -7,6 +7,7 @@ module.exports = {
     entry: {
       index: './src/index.js',
       utils: './src/utils.js',
+      time : './src/time.js'
     },
     plugins: [
       new HtmlWebpackPlugin({

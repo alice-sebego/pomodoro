@@ -43,7 +43,7 @@ $start.addEventListener("click", () => {
 
   util.disableInput($start);
 
-  if(checkInterval === false) {
+  if(!checkInterval) {
 
     checkInterval = true;
 
@@ -52,13 +52,12 @@ $start.addEventListener("click", () => {
 
     let timer = setInterval(() => {
 
-        if( pause === false && Work.timeTotal > 0){
-          console.log("work");
+        if( !pause && Work.timeTotal > 0){
+          //console.log("work");
           Work.countdown();
           Work.displayTime();
-          
-
-        } else if(pause === false && Rest.timeTotal === 0 && Work.timeTotal === 0){
+     
+        } else if(!pause && Rest.timeTotal === 0 && Work.timeTotal === 0){
           
           startminWork = 30;
           startminRest = 5;
@@ -73,14 +72,14 @@ $start.addEventListener("click", () => {
          
           Work.displayTime();
           Rest.displayTime();
-          
-
-        } else if (pause === false && Work.timeTotal === 0){
-            console.log("rest");
+    
+        } else if (!pause && Work.timeTotal === 0){
+            //console.log("rest");
             Rest.countdown();
             Rest.displayTime();
 
         } 
+
       }, 1000);
 
       $reset.addEventListener("click", () =>{
@@ -101,11 +100,13 @@ $start.addEventListener("click", () => {
         Rest = new Time(startminRest, timeRest, minRest, secRest, $rest);
         Work.displayTime();
         Rest.displayTime();
+
       });
 
-    
   } else {
+
     return;
+
   }
 
 });
@@ -119,5 +120,5 @@ $pause.addEventListener("click", () => {
   }
 
   pause = !pause;
-});
 
+});

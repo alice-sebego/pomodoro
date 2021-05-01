@@ -21,13 +21,13 @@ document.querySelector('head').appendChild(util.favicon(Icon));
 $cycleNb.innerHTML = cycle;
 
 // Display time of Work
-let startminWork = 15;
-let timeWork = startminWork * 1;
+let startminWork = 30;
+let timeWork = startminWork * 60;
 let minWork = Math.floor(timeWork / 60);
 let secWork = timeWork % 60;
 // Display time of Rest
 let startminRest = 5;
-let timeRest = startminRest * 1;
+let timeRest = startminRest * 60;
 let minRest = Math.floor(timeRest / 60);
 let secRest = timeRest % 60;
 

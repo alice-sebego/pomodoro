@@ -110,3 +110,14 @@ $start.addEventListener("click", () => {
 
 });
 
+$pause.addEventListener("click", () => {
+
+  if(!pause){
+    $pause.value = "Play";
+  } else if(pause){
+    $pause.value = "Pause"
+  }
+
+  pause = !pause;
+});
+

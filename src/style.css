@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Raleway&display=swap');
 
 *, ::before, ::after{
     box-sizing: border-box;
@@ -22,12 +22,12 @@ header{
 }
 
 h1{
-    font-size: 7vw;
+    font-size: 6vw;
     color: white;
 }
 
 h2{
-    font-size: 4vw;
+    font-size: 3vw;
     color: rgb(148, 3, 117);
 }
 
@@ -48,8 +48,7 @@ h2{
 .count > span{
     display: block;
     margin: 2vh 0;
-    font-weight: bold;
-    font-size: 1.5em;
+    font: bold 1.7em 'Open Sans', sans-serif;
 }
 
 main{
@@ -76,6 +75,12 @@ input[type="button"]{
     border-radius: .3em;
     box-shadow: 0 .2em .5em rgba(0, 0, 0, 0.3);
 }
+
+input[type="button"]:hover,
+input[type="button"]:active{
+    cursor: pointer;
+}
+
 .count, #displayCycle{
     text-align: center;
 }
@@ -91,6 +96,7 @@ footer{
 }
 
 @media (max-width:700px){
+    
     main{
         width: 65%;
     }
@@ -99,9 +105,11 @@ footer{
         padding: 0.5em;
         font-size: 1em;
     }
+
 }
 
 @media (max-width:495px){
+    
     main{
         width: 80%;
     }

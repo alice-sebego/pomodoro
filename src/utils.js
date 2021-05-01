@@ -36,7 +36,5 @@ const disableInput = (element) => {
 const undisableInput = (element) => {
     element.disabled = false;
 }
-  
-
-
+ 
 export {favicon, displayYear, disableInput, undisableInput}

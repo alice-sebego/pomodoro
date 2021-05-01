@@ -1,12 +1,12 @@
 export default class Time{
 
-    constructor(startmin, time, min, sec, elementHTML){
+    constructor(startmin, time, min, sec, element){
 
         this.startmin = startmin;
         this.time = time;
         this.min = min;
         this.sec = sec;
-        this.elementHTML = elementHTML;
+        this.element = element;
 
     }
 
@@ -21,9 +21,9 @@ export default class Time{
         this.sec = this.time % 60;
         this.min = this.min < 10 ? '0' + this.min : this.min;
         this.sec = this.sec < 10 ? '0' + this.sec : this.sec;
-        this.elementHTML.innerHTML = `${this.min} : ${this.sec}`;
+        this.element.innerHTML = `${this.min} : ${this.sec}`;
         
-        return this.elementHTML.innerHTML;
+        return this.element.innerHTML;
     }
 
     countdown(){
@@ -31,4 +31,3 @@ export default class Time{
     }
 
 }
-

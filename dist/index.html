@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta social media -->
+    <meta property="og:title" content="Pomodoro">
+    <meta property="og:description" content="Pomodoro made with vanilla JavaScript">
+    <meta property="og:image" content="https://images.pexels.com/photos/39396/hourglass-time-hours-sand-39396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1280&w=965">
+    <meta property="og:url" content="https://alice-sebego.github.io/pomodoro">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="Pomodoro">
+    <meta name="twitter:image:alt" content="Pomodoro">
+    <meta property="fb:app_id" content="#"/>
+    <meta name="twitter:site" content="@comamalice">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Script -->
     <script src="https://unpkg.com/lodash@4.17.20"></script>
     <title>Pomodoro</title>
 <link href="style.css" rel="stylesheet"></head>
 <body>
     <header>
-        <h1>App Pomodoro</h1>
+        <h1><i class="fas fa-hourglass-half"></i> App Pomodoro</h1>
     </header>
     <main>
         <div id="counts">
             <div class="count">
                 <h2>Travail</h2>
-                <span id="work">30 : 00</span>
+                <span id="work"></span>
             </div>
             <div class="count">
                 <h2>Repos</h2>
-                <span id="rest">05 : 00</span>
+                <span id="rest"></span>
             </div>
         </div>
         <div id="buttons">
@@ -33,7 +45,8 @@
         </div>
     </main>
     <footer>
-        <p><span id="year"></span> | Pomodoro</p>
+        <p><span id="year"></span> | Pomodoro -  Side project which works with JavaScript & webpack 5</p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/alice-sebego/pomodoro" rel="author" title="Get app's code on GitHub">See code of this app</a> - <i class="fab fa-twitter"></i> <a href="https://twitter.com/ComaMalice" target="_blank" title="Follow us on Twitter">Follow us on Twitter</a></p>
     </footer>
 <script defer src="index.bundle.js"></script><script defer src="utils.bundle.js"></script><script defer src="time.bundle.js"></script></body>
 </html>

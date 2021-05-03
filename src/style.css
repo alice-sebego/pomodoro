@@ -74,11 +74,16 @@ input[type="button"]{
     border: none;
     border-radius: .3em;
     box-shadow: 0 .2em .5em rgba(0, 0, 0, 0.3);
+    transition: all 500ms ease-in-out;
 }
 
 input[type="button"]:hover,
 input[type="button"]:active{
     cursor: pointer;
+    font-weight: 600;
+    color:rgb(148, 3, 117);
+    background-color: white;
+    border-bottom: 0.5px solid black;
 }
 
 .count, #displayCycle{
@@ -86,13 +91,29 @@ input[type="button"]:active{
 }
 
 #displayCycle{
+    padding: 1vh 0;
+    border-top: 1px dotted white;
+    border-bottom: 1px dotted white;
     color: white;
     font-size: 1.5em;
 }
 
 footer{
     color: white;
+    font-size: 0.9em;
     text-align: center;
+    line-height: 1.8em;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+footer a:hover,
+footer a:active{
+    text-decoration: underline;
 }
 
 @media (max-width:700px){

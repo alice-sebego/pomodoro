@@ -8,7 +8,7 @@ Idem with Webpack 5
 
 ## Languages and Tools used :
 * HTML5, CSS3, JavaScript
-* Webpack 5
+* Webpack 5 & Babel
 
 ## DevDependencies : 
 Install all devDependencies : `npm install`
